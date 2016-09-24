@@ -24,7 +24,7 @@
 				<div class="col-md-6 select">
 					<strong>Select Source</strong>
 					<br><select class="form-control drop-down" value="source" name="source" id="source" 
-					ng-model="source" ng-options="itinerary.name for itinerary in itineraries" 
+					ng-model="source" ng-options="airport.name for airport in airports | orderBy:name" 
 					ng-value="itinerary.name">
 					<option value="" label="Source"></option>
 					</select>
@@ -32,19 +32,54 @@
 				<div class="col-md-6 select">
 					<strong>Select Destination</strong>
 					<br><select class="form-control drop-down" value="destination" name="destination" id="destination" 
-					ng-model="destination" ng-options="itinerary.name for itinerary in itineraries"
+					ng-model="destination" ng-options="airport.name for airport in airports | orderBy:name"
 					ng-value="itinerary.name">
 					<option value="" label="Destination"></option>
 					</select>
 				</div>
-				
-				<div class="row">
-					<div class="col-md-12" style="margin: 10px;">
-						<input type="submit" class="btn btn-success button" ng-click="add();" value="Add Itinerary" />
-					</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-12">
+					<input type="submit" class="btn btn-success button" ng-click="add();" value="Add Itinerary" />
 				</div>
-				<tt>Source = {{source}}</tt><br/>
-				<tt>Destination = {{destination}}</tt><br/>
+			</div>
+			{{error}}
+			<div class="row">
+			<div class="col-md-12">
+			<table class="table table-inverse center-table">
+				<thead>
+					<tr>
+						<th style="text-align: center">Source</th>
+						<th style="text-align: center">Destination</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="itinerary in itineraries">
+						<td>{{itinerary.source.code}}
+							<br/>
+							{{itinerary.source.name}}
+							<br/>
+							{{itinerary.source.state}}, {{itinerary.source.country}}
+							<br/>
+							Runway Length: {{itinerary.source.runway_length}}
+							<br/>
+							Direct Flights: {{itinerary.source.direct_flights}}
+						</td>
+		     			<td>{{itinerary.destination.code}}
+							<br/>
+							{{itinerary.destination.name}}
+							<br/>
+							{{itinerary.destination.state}}, {{itinerary.destination.country}}
+							<br/>
+							Runway Length: {{itinerary.destination.runway_length}}
+							<br/>
+							Direct Flights: {{itinerary.destination.direct_flights}}
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
 			</div>
 		</div>
 	</div>
