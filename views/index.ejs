@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Itinerary System</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="angularjs/itinerary.js"></script>
+</head>
+<body ng-app="itinerary" ng-controller="validateItinerary">
+	<div class="row">
+		  	<div class="col-xs-12 heading">Itinerary Management System</div>
+		    <div class="col-xs-12 title"></div>
+	 </div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-md-6 select">
+					<strong>Select Source</strong>
+					<br><select class="form-control drop-down" value="source" name="source" id="source" 
+					ng-model="source" ng-options="itinerary.name for itinerary in itineraries" 
+					ng-value="itinerary.name">
+					<option value="" label="Source"></option>
+					</select>
+				</div>
+				<div class="col-md-6 select">
+					<strong>Select Destination</strong>
+					<br><select class="form-control drop-down" value="destination" name="destination" id="destination" 
+					ng-model="destination" ng-options="itinerary.name for itinerary in itineraries"
+					ng-value="itinerary.name">
+					<option value="" label="Destination"></option>
+					</select>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-12" style="margin: 10px;">
+						<input type="submit" class="btn btn-success button" ng-click="add();" value="Add Itinerary" />
+					</div>
+				</div>
+				<tt>Source = {{source}}</tt><br/>
+				<tt>Destination = {{destination}}</tt><br/>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

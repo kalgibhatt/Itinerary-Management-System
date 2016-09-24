@@ -1,0 +1,43 @@
+body {
+	text-align: center;
+	background-color: #E37222;
+	color: black;
+	font: 25px "Lucida Grande", Helvetica, Arial, sans-serif;
+	display: block;
+	margin: auto;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.heading {
+	border-bottom: 5px solid black;
+	font-size: 50px;
+	margin-top: 30px;
+}
+
+.title {
+	font-size: 40px;
+	margin-top: 30px;
+}
+
+.select {
+	margin-top: 30px;
+	font-size: 40px;
+}
+
+.drop-down {
+	width:80%;
+	margin:auto;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+
+.button {
+	background-color: #373F27;
+	font-size: 1.25em;
+	color:white;
+	border-radius: 10px;
+	margin:auto;
+}
